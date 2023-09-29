@@ -3,7 +3,7 @@
   "version": "0.1.0",
   "private": true,
   "scripts": {
-    "dev": "yarn download:translations && next dev",
+    "dev": "next dev",
     "download:translations": "i18nexus pull -k hlSnIBNWhMsi_sjUQ0xGeA",
     "build": "yarn download:translations && next build",
     "start": "next start",

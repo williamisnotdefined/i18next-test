@@ -15,9 +15,20 @@ export default function Home() {
     <div>
       <h1>{t("testing:page_one")}</h1>
 
-
       <Link href="/two">
         {t("testing:go_to_page_two")}
+      </Link>
+
+      <br />
+
+      <Link href="/client-page">
+        client side loaded
+      </Link>
+
+      <br />
+
+      <Link href="/lazy-reload-page">
+        lazy reload on client side
       </Link>
       
       <br />

@@ -6,7 +6,7 @@ const LocalStorageBackend = require("i18next-localstorage-backend").default;
 const isBrowser = typeof window !== "undefined";
 
 module.exports = {
-  // debug: true,
+  debug: true,
 
   i18n: {
     defaultLocale: "en",
@@ -16,7 +16,7 @@ module.exports = {
   // localePath: isBrowser ? path.resolve("./public/locales") : "/locales",
 
   backend: {
-    backends: isBrowser ? [LocalStorageBackend, HttpBackend] : [HttpBackend],
+    backends: isBrowser ? [LocalStorageBackend, HttpBackend] : [],
     backendOptions: [
       {
         expirationTime: 7 * 24 * 60 * 60 * 1000,
@@ -24,7 +24,7 @@ module.exports = {
         version: {},
         store: isBrowser ? window.localStorage : null,
       },
-      { loadPath: "/public/locales/{{lng}}/{{ns}}.json" },
+      { loadPath: "/locales/{{lng}}/{{ns}}.json" },
     ],
   },
 
