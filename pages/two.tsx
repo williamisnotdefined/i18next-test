@@ -1,21 +1,18 @@
 import { GetStaticProps } from "next";
 import { serverSideTranslations } from "next-i18next/serverSideTranslations";
-import Link from 'next/link'
-import { useTranslation } from "next-i18next";
+import dynamic from 'next/dynamic';
 
-export default function HomeTwo() {
-  const { t } = useTranslation();
+const DynamicComponent = dynamic(() => import('../components/two'), {ssr: false});
 
+function Two(props: any) {
   return (
     <div>
-      <h1>{t("testing:page_two")}</h1>
-
-      <Link href="/one">
-        {t("testing:go_to_page_one")}
-      </Link>
+      <DynamicComponent {...props} />
     </div>
-  )
+  );
 }
+
+export default Two;
 
 export const getStaticProps: GetStaticProps = async ({ locale }) => {
   return {

@@ -29,12 +29,13 @@ module.exports = {
   },
 
   // partialBundledLanguages: false,
-  // defaultNS: ["common"],
-  // ns: ["common"],
+  // defaultNS: ["testing"],
+  // ns: ["testing"],
 
   serializeConfig: false,
 
   // reloadOnPrerender: false,
+  // react: { useSuspense: false },
 
   use: isBrowser ? [ChainedBackend] : [],
 };
