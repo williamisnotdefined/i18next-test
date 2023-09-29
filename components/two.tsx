@@ -12,6 +12,18 @@ export default function HomeTwo() {
       <Link href="/one">
         {t("testing:go_to_page_one")}
       </Link>
+
+      <br />
+
+      <Link href="/client-page">
+        client side loaded
+      </Link>
+
+      <br />
+
+      <Link href="/lazy-reload-page">
+        lazy reload on client side
+      </Link>
     </div>
   )
 }
